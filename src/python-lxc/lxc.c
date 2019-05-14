@@ -121,7 +121,7 @@ static int lxc_attach_python_exec(void* _payload)
      * container. As lxc_attach() calls fork() PyOS_AfterFork should be called
      * in the new process if the Python interpreter will continue to be used.
      */
-    PyOS_AfterFork();
+    PyOS_AfterFork_Child();
 
     struct lxc_attach_python_payload *payload =
         (struct lxc_attach_python_payload *)_payload;
